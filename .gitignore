@@ -48,6 +48,9 @@ venv.bak/
 *.lol
 
 # LaTeX intermediate files
+
+# Reference folder
+reference/
 *.dvi
 *.xdv
 *-converted-to.*
