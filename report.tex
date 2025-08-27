@@ -25,21 +25,21 @@
 % Use \Cref{} instead of \ref{}
 \usepackage[nameinlink]{cleveref}
 
-% FOR DEMONSTRATION PURPOSES, REMOVE IN PRODUCTION
-\usepackage{mwe}
+% Additional packages can be added here as needed
 
 % Sub-preambles
 % https://github.com/MartinScharrer/standalone
 
 % Configurations
-\coursename{Course name h}
-\reporttype{Report type h}
-\title{Report title h}
-\advisor{& Advisor h &}
+\coursename{ES-243-CC01 - Earth Science}
+\reporttype{MUSEUM REPORT}
+\title{MUSEUM REPORT}
+\advisor{& MSc. Dong Uyen Thanh &}
 \stuname{%
-  & Student 1 & ID 1 \\
-  & Student 2 & ID 2 \\
-  & Student 3 & ID 3 \\
+  & Nguyen Le Thanh Hao & 1952242 \\
+  & Pham Gia Bao & 2151052 \\
+  & Nguyen Bao Duy & 2152042 \\
+  & Vo Minh Nhat & 2151240 \\
 }
 
 % Allow page breaks inside align* environment
@@ -62,20 +62,7 @@
 \begin{document}
 \coverpage%
 
-%\section*{Member list \& Workload}
-%\newcounter{memberrowno}
-%\setcounter{memberrowno}{0}
-%\begin{center}
-%  \begin{tabular}{>{\stepcounter{memberrowno}\thememberrowno}llcc}
-%    \toprule
-%    \multicolumn{1}{c}{\textbf{No.}} & \textbf{Full name} & \textbf{Student ID} & \textbf{Contribution} \\
-%    \midrule
-%                                     & h                  & xxxxxxx             & 100\%                       \\
-%                                     & h                  & xxxxxxx             & 100\%                       \\
-%    \bottomrule
-%  \end{tabular}
-%\end{center}
-%\clearpage
+
 
 \tableofcontents
 \listoffigures
@@ -83,45 +70,19 @@
 \lstlistoflistings{}
 
 \clearpage
-\section{Normal section}
-This is how you normally work with \LaTeX, but you can also split a project into smaller files for easier management.
-To import other files, you can use \mintinline{latex}{\input{}} or \mintinline{latex}{\include{}}.
-There differences can be found at \url{https://tex.stackexchange.com/a/250}, but in short
 
-\begin{center}
-  \mintinline{latex}{\include{filename}} = \mintinline{latex}{\clearpage \input{filename} \clearpage}
-\end{center}
+% Import acknowledgement
+\input{chapters/acknowledgement.tex}
 
-\section{Label prefixes}
-There are no definite rules for label prefixes, but you can use the following as a guideline.
-\begin{itemize}
-  \item \textbf{chap:} for chapters
-  \item \textbf{sec:} for sections
-  \item \textbf{subsec:} for subsections
-  \item \textbf{eq:} for equations
-  \item \textbf{fig:} for figures
-  \item \textbf{tab:} for tables
-  \item \textbf{enum:} for enumerators and items
-  \item \textbf{fn:} for footnotes
-  \item \textbf{lst:} for listings
-  \item \textbf{alg:} for algorithms
-  \item \textbf{app:} for appendices
-\end{itemize}
+% Import chapters
+\input{chapters/introduction.tex}
+\input{chapters/general-geology.tex}
 
-The \mintinline{latex}{\caption} macro increases the used counter and sets the current label text which is used by \mintinline{latex}{\label}.
-If you use \mintinline{latex}{\label} before it the old label text is used instead, which leads to a wrong number.
-Always use \mintinline{latex}{\label} after \mintinline{latex}{\caption} and not before or in it.
-
-That said, conventions are just conventions, and you can use whatever you want as long as you are consistent.
-
-\clearpage
-\input{chapters/example/better-tables.tex}
-\input{chapters/example/better-enum.tex}
-\include{chapters/example/codespace.tex}
-\include{chapters/example/figwidth.tex}
-
-\bibliographystyle{plain}
-\bibliography{refs/example.bib}
-\nocite{*}
+% Bibliography
+\begin{thebibliography}{9}
+\bibitem{thanhnien2023}
+Thanh Niên. (2023). \textit{Bảo tàng ở TP.HCM: Bảo tàng Địa chất - Độc vị trái đất}. 
+\url{https://thanhnien.vn/bao-tang-o-tphcm-bao-tang-dia-chat-doc-vi-trai-dat-18525040712390276.htm}
+\end{thebibliography}
 
 \end{document}
